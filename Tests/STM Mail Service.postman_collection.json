@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "153b4648-8ea4-4cc1-90ed-a490687cbb48",
+		"name": "STM Mail Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34970571"
+	},
+	"item": [
+		{
+			"name": "sendSimpleMail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-simple?to=vaibhavd777vd@gmail.com&subject=stm se aayi khabar&text=jai mata di",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-simple"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com"
+						},
+						{
+							"key": "subject",
+							"value": "stm se aayi khabar"
+						},
+						{
+							"key": "text",
+							"value": "jai mata di"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send HTML mail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"to\": \"vaibhavd777vd@gmail.com\",\r\n  \"subject\": \"Test Subject\",\r\n  \"htmlContent\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n    <meta charset=\\\"UTF-8\\\">\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n    <title>Welcome Email</title>\\n    <style>\\n        body {\\n            font-family: Arial, sans-serif;\\n            margin: 0;\\n            padding: 0;\\n            background-color: #f4f4f4;\\n        }\\n        .container {\\n            width: 80%;\\n            margin: auto;\\n            overflow: hidden;\\n        }\\n        .header {\\n            background: #333;\\n            color: #fff;\\n            padding: 20px 0;\\n            text-align: center;\\n        }\\n        .main {\\n            padding: 20px;\\n            background: #fff;\\n            border-radius: 8px;\\n            box-shadow: 0 0 10px rgba(0,0,0,0.1);\\n        }\\n        .footer {\\n            background: #333;\\n            color: #fff;\\n            text-align: center;\\n            padding: 10px 0;\\n            margin-top: 20px;\\n            border-radius: 0 0 8px 8px;\\n        }\\n        h1 {\\n            color: #333;\\n        }\\n        p {\\n            color: #555;\\n            line-height: 1.6;\\n        }\\n        .btn {\\n            display: inline-block;\\n            padding: 10px 20px;\\n            font-size: 16px;\\n            color: #fff;\\n            background: #007bff;\\n            text-decoration: none;\\n            border-radius: 5px;\\n        }\\n        .btn:hover {\\n            background: #0056b3;\\n        }\\n    </style>\\n</head>\\n<body>\\n    <div class=\\\"container\\\">\\n        <div class=\\\"header\\\">\\n            <h1>Welcome to S2M Application!</h1>\\n        </div>\\n        <div class=\\\"main\\\">\\n            <p>Dear User,</p>\\n            <p>We are thrilled to have you join the S2M application. We are committed to providing you with the best experience possible, and we look forward to helping you achieve your goals.</p>\\n            <p>To get started, click the button below to explore the features of our application:</p>\\n            <a href=\\\"http://your-application-url.com\\\" class=\\\"btn\\\">Get Started</a>\\n            <p>If you have any questions or need assistance, feel free to contact our support team.</p>\\n            <p>Thank you for choosing S2M!</p>\\n            <p>Best Regards,<br>The S2M Team</p>\\n        </div>\\n        <div class=\\\"footer\\\">\\n            <p>&copy; 2024 S2M Application. All rights reserved.</p>\\n        </div>\\n    </div>\\n</body>\\n</html>\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-html"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "subject",
+							"value": "test mail from stm",
+							"disabled": true
+						},
+						{
+							"key": "htmlContent",
+							"value": "<h1>VD is the best</h1>",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send Attachment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-attachment?to=vaibhavd777vd@gmail.com&subject=test mail with attachment from stm&text=pfa&pathToAttachment=C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-attachment"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com"
+						},
+						{
+							"key": "subject",
+							"value": "test mail with attachment from stm"
+						},
+						{
+							"key": "text",
+							"value": "pfa"
+						},
+						{
+							"key": "pathToAttachment",
+							"value": "C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send Attachments as files",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-email-with-attachments?to=vaibhavd777vd@gmail.com&subject=test mail with attachment from stm&text=pfa&pathToAttachment=C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-email-with-attachments"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com"
+						},
+						{
+							"key": "subject",
+							"value": "test mail with attachment from stm"
+						},
+						{
+							"key": "text",
+							"value": "pfa"
+						},
+						{
+							"key": "pathToAttachment",
+							"value": "C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send Scheduled Email",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-email-with-attachments?to=vaibhavd777vd@gmail.com&subject=test mail with attachment from stm&text=pfa&pathToAttachment=C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-email-with-attachments"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com"
+						},
+						{
+							"key": "subject",
+							"value": "test mail with attachment from stm"
+						},
+						{
+							"key": "text",
+							"value": "pfa"
+						},
+						{
+							"key": "pathToAttachment",
+							"value": "C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send template email",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-template-mail?to=vaibhavd777vd@gmail.com&subject=test mail with attachment from stm&text=pfa&pathToAttachment=C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-template-mail"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com"
+						},
+						{
+							"key": "subject",
+							"value": "test mail with attachment from stm"
+						},
+						{
+							"key": "text",
+							"value": "pfa"
+						},
+						{
+							"key": "pathToAttachment",
+							"value": "C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send inline image",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/mail/send-inline-image?to=vaibhavd777vd@gmail.com&subject=test mail from stm&htmlContent=<h1>Test HTML Content</h1>&pathToImage=C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg&imageId=image1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mail",
+						"send-inline-image"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "vaibhavd777vd@gmail.com"
+						},
+						{
+							"key": "subject",
+							"value": "test mail from stm"
+						},
+						{
+							"key": "htmlContent",
+							"value": "<h1>Test HTML Content</h1>"
+						},
+						{
+							"key": "pathToImage",
+							"value": "C://Users//11911//Pictures//Camera Roll//WIN_20240610_10_54_00_Pro.jpg"
+						},
+						{
+							"key": "imageId",
+							"value": "image1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
