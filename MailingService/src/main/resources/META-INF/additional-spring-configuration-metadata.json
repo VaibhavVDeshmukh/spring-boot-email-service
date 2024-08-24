@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "mail.from.address",
+  "type": "java.lang.String",
+  "description": "The email address from which all outgoing emails are sent."
+}]}
